@@ -23,13 +23,12 @@ export const TaskItem = ({
   const dueToday = isDueToday(task.dueDate);
   const overdue = !task.completed && isOverdue(task.dueDate);
 
-  // Intentional imperfection #8: Medium badge has slightly different border class (border-dashed)
   const getPriorityBadge = (priority) => {
     switch (priority) {
       case PRIORITIES.HIGH:
         return 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/40 dark:text-rose-400 dark:border-rose-900/60';
       case PRIORITIES.MEDIUM:
-        return 'bg-amber-50 text-amber-700 border-dashed border-amber-300 dark:bg-amber-950/40 dark:text-amber-400 dark:border-amber-800';
+        return 'bg-amber-50 text-amber-700 border-amber-300 dark:bg-amber-950/40 dark:text-amber-400 dark:border-amber-800';
       case PRIORITIES.LOW:
       default:
         return 'bg-zinc-100 text-zinc-700 border-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:border-zinc-700';
